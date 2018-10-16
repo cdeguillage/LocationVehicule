@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Divers -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Location de véhicules</title>
+</head>
+<body>
+
+
+        <!-- BURGER MENU-->
+        <div class="fixed-top">
+
+            <nav class="navbar navbar-expand-xs">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon navbar-perso"></span>
+                </button>
+
+                <div class="navbar-collapse collapse bg-light" id="navbarsExample01" style="">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#louervoiture">Louer une voiture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#louerutilitaire">Louer un utilitaire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reserverchauffeur">Réserver un chauffeur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#agence">Découvrez nos agences</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#compte">Mon compte</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+        <!-- IMAGE EN-TETE -->
+        <img src="assets/image/background.jpg" class="img-fluid" alt="Bienvenue à bord" />
+
+        <!-- TITRE / SLOGAN -->
+        <div class="text-center titre">
+            <h1>Bienvenue à bord</h1>
+            <h2>Location de voiture 24h/24 et 7j/7</h2>
+        </div>
+
+        <!-- FILTRE -->
+        <div class="container">
+
+            <!-- Formulaire -->
+            <form class="d-inline-flex justify-content-between align-items-center filtre filtre-blanc">
+
+                <!-- Adresse de départ -->
+                <div class="p-2">
+                    <div class="dropdown show">
+                        <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Adresse de départ
+                        </a>
+                    
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Toutes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Paris</a>
+                            <a class="dropdown-item" href="#">Bruxelles</a>
+                            <a class="dropdown-item" href="#">Lisbonne</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date de départ de la location -->
+                <div class="p-2">
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Début de location" aria-label="DebutLocation" aria-describedby="basic-addon1">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="calDebutLocation"><img src="assets/image/calendar.png" class="calendar" alt="Calendrier"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Date de fin de la location -->
+                <div class="p-2">
+            
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Fin de location" aria-label="FinLocation" aria-describedby="basic-addon1">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="calFinLocation"><img src="assets/image/calendar.png" class="calendar" alt="Calendrier"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bouton de valisation -->
+                <div class="p-3 filtre-vert">
+                    <!-- <button id="valider" class="valider">Valider ma recherche</button> -->   <!-- TEST JQUERY -->
+                    <a href="">Valider ma recherche</a>
+                </div>
+
+            </form> <!-- formulaire -->
+
+        </div>  <!-- container -->
+
+        <!-- RESULTATS -->
+        <div class="container resultat" id="resultat">
+
+            <!-- Formulaire -->
+            <form class="d-inline-flex justify-content-between align-items-center">
+            
+                <!-- Nombre -->
+                <div class="col-6 resultat">
+                    7 résultats
+                </div>
+
+                <!-- Choix prix -->
+                <div class="col-6">
+                    <div class="dropdown show">
+                        <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Prix croissant
+                        </a>
+            
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Prix croissant</a>
+                            <a class="dropdown-item" href="#">Prix décroissant</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- LISTE DES VEHICULES -->
+        <div id="listeVehicules" class="container listeVehicules">
+
+            <div class="d-inline-flex justify-content-between align-items-center">
+                <div class="img-center">
+                    <img src="assets/image/vehicule1.png" alt="Peugeot 208">
+                </div>
+                <div>
+                    <h5>Peugeot 208</h5>
+                    <div>
+                        <p>
+                        Diesel, 5 portes, GPS, AutoRadio, Forfait 1000 km (0.5/km supplémentaire)<br />
+                        999 € - Agence de Paris
+                        </p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success">Réserver et payer</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="ligne">
+
+            <div class="d-inline-flex justify-content-between align-items-center">
+                <div class="img-center">
+                    <img src="assets/image/vehicule2.png" alt="Ford Focus">
+                </div>
+                <div>
+                    <h5>Ford Focus</h5>
+                    <div>
+                        <p>
+                            Diesel, 5 portes, GPS, AutoRadio, Forfait 1000 km (0.5/km supplémentaire)<br />
+                            999 €
+                        </p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success">Réserver et payer</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="ligne">
+
+            <div class="d-inline-flex justify-content-between align-items-center">
+                <div class="img-center">
+                    <img src="assets/image/vehicule3.png" alt="Audi A1">
+                </div>
+                <div>
+                    <h5>Audi A1</h5>
+                    <div>
+                        <p>
+                            Diesel, 5 portes, GPS, AutoRadio, Forfait 1000 km (0,55/km supplémentaire)<br />
+                            1100 € - Agence de Paris
+                        </p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success">Réserver et payer</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="ligne">
+
+            <div class="d-inline-flex justify-content-between align-items-center">
+                <div class="img-center">
+                    <img src="assets/image/vehicule1.png" alt="Peugeot 208">
+                </div>
+                <div>
+                    <h5>Opel Mokka</h5>
+                    <div>
+                        <p>
+                            Diesel, 5 portes, GPS, AutoRadio, Forfait 1000 km (0,4/km supplémentaire)<br />
+                            1150 € - Agence de Paris
+                        </p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success">Réserver et payer</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    <!-- BOOTSTRAP CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- JS / JQUERY -->
+    <!-- <script src="assets/js/script.js"></script>       DESACTIVE - MANQUE DE TEMPS POUR LE DEVELOPPEMENT -->
+    <script src="assets/js/datetimepicker.js"></script>
+</body>
+</html>
